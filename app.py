@@ -7,9 +7,12 @@ from datetime import datetime, timedelta
 import secrets
 import threading
 from config import DB_CONFIG
+
 # from flask_socketio import SocketIO, emit, join_room
 
 app = Flask(__name__)
+
+CORS(app, origins=["https://shopeasy-frontend.vercel.app", "http://localhost:3000"])
 
 # ========== EMAIL CONFIGURATION ==========
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
